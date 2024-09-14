@@ -19,18 +19,21 @@ namespace ApiMutants.EndpointsDefinition
         {
             try
             {
+
                 var mutantRequest = autoMapper.Map<Mutants>(request.DNA);
                 var commandService = new MutantsRqst(mutantRequest);
                 bool isMutant = await mediatr.Send(commandService, cancellationToken);
 
                 int retorno = isMutant ? StatusCodes.Status200OK : StatusCodes.Status403Forbidden;
 
-                return Results.StatusCode(retorno);
+                return isMutant
+                    ? Results.Ok(retorno)
+                    : Results.NotFound(retorno);
             }
             catch (Exception ex)
             {
                 logger.LogError("Error isMutant", ex.Message);
-                return Results.StatusCode(StatusCodes.Status500InternalServerError);
+                return Results.Problem(ex.Message);
             }
         }
 

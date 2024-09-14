@@ -90,7 +90,7 @@ Respuesta si es Mutante: HTTP 200 - OK
 
 Respuesta caso No Mutante: HTTP 403 - Bad Request
 
-Respuesta Error 500 Bad Request
+Respuesta Error para excepciones 500 Internal Server Error
 
 
 GET /stats
