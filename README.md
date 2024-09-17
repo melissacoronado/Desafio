@@ -46,7 +46,7 @@ Te ha contratado a ti para que desarrolles un proyecto que detecte si un humano 
     dotnet run
     ```
 
-6. La API estará disponible en `http://localhost:5070` o `https://localhost:7039/` para HTTPS.
+6. La API estará disponible en `http://localhost:5070` o `https://localhost:7034/` para HTTPS.
 
 
 ### Opcional: Ejecutar desde VS Code, instalar pluggin:
