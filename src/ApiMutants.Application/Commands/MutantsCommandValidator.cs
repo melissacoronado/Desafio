@@ -22,5 +22,4 @@ namespace ApiMutants.Application.Commands
                 .WithMessage("La tabla de DNA's debe contener al menos 4 secuencias."); ;
         }
     }
-
 }

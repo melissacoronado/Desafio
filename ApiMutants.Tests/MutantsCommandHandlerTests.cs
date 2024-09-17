@@ -1,5 +1,6 @@
 using ApiMutants.Application.Commands;
 using ApiMutants.Application.Interfaces;
+using ApiMutants.Domain.NonEntities;
 using Microsoft.Extensions.Logging;
 using Moq;
 
@@ -17,7 +18,7 @@ namespace ApiMutants.Tests
         {
             _loggerMock = new Mock<ILogger<MutantsCommandHandler>>();
             _mutantServiceMock = new Mock<IMutantsService>();
-                        
+
             _handler = new MutantsCommandHandler(_loggerMock.Object, _mutantServiceMock.Object);
         }
 
@@ -25,16 +26,16 @@ namespace ApiMutants.Tests
         public async Task Handle_ShouldReturnTrue_WhenMutantServiceReturnsTrue()
         {
             // Arrange
-            var dnaTable = new Domain.NonEntities.Mutants(); 
+            var dnaTable = new Domain.NonEntities.Mutants();
             var request = new MutantsRqst(dnaTable);
-                        
+
             _mutantServiceMock.Setup(service => service.isMutant(dnaTable)).Returns(true);
 
             // Act
             var result = await _handler.Handle(request, CancellationToken.None);
 
             // Assert
-            Assert.IsTrue(result); 
+            Assert.IsTrue(result);
             _mutantServiceMock.Verify(service => service.isMutant(dnaTable), Times.Once);
         }
 
@@ -48,17 +49,17 @@ namespace ApiMutants.Tests
 
             var result = await _handler.Handle(request, CancellationToken.None);
 
-            Assert.IsFalse(result); 
-            _mutantServiceMock.Verify(service => service.isMutant(dnaTable), Times.Once); 
+            Assert.IsFalse(result);
+            _mutantServiceMock.Verify(service => service.isMutant(dnaTable), Times.Once);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public async Task Handle_ShouldThrowException_WhenMutantServiceThrowsException()
         {
-            var dnaTable = new Domain.NonEntities.Mutants();
+            var dnaTable = new Mutants();
             var request = new MutantsRqst(dnaTable);
-                        
+
             _mutantServiceMock.Setup(service => service.isMutant(dnaTable)).Throws(new Exception("Error"));
 
             await _handler.Handle(request, CancellationToken.None);

@@ -1,7 +1,7 @@
 ﻿using ApiMutants.Domain.NonEntities;
 using AutoMapper;
 
-namespace ApiMutants
+namespace ApiMutants.PresentationLayer
 {
     public class AutoMapperProfile : Profile
     {

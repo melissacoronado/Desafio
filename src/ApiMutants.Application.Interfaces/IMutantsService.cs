@@ -1,10 +1,7 @@
-﻿
-using ApiMutants.Domain.NonEntities;
+﻿using ApiMutants.Domain.NonEntities;
 
-namespace ApiMutants.Application.Interfaces
+namespace ApiMutants.Application.Interfaces;
+public interface IMutantsService
 {
-    public interface IMutantsService
-    {
-        bool isMutant(Mutants data);
-    }
+    bool isMutant(Mutants data);
 }

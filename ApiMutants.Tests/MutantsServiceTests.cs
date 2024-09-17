@@ -25,7 +25,7 @@ namespace ApiMutants.Tests
             _optionsMock = new Mock<IOptions<SequenceConfig>>();
 
             _optionsMock.Setup(x => x.Value).Returns(new SequenceConfig()
-            { 
+            {
                 MinQuantity = 4
             });
 
@@ -45,11 +45,11 @@ namespace ApiMutants.Tests
                 "CCCCTA",
                 "TCACTA"
             };
-            var dnaData = new Domain.NonEntities.Mutants { DNA = dna }; 
+            var dnaData = new Domain.NonEntities.Mutants { DNA = dna };
 
             var result = _mutantsService.isMutant(dnaData);
 
-            Assert.IsTrue(result); 
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
@@ -70,12 +70,12 @@ namespace ApiMutants.Tests
 
             Assert.IsFalse(result);
         }
-               
+
 
         [TestMethod]
         public void IsMutant_ShouldHandleEmptyDNA()
-        {           
-            var dnaData = new Domain.NonEntities.Mutants ();
+        {
+            var dnaData = new Domain.NonEntities.Mutants();
 
             try
             {

@@ -1,4 +1,5 @@
 ﻿using ApiMutants.Application.Interfaces;
+using ApiMutants.Domain.NonEntities;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace ApiMutants.Application.Commands
 {
-    public record MutantsRqst(Domain.NonEntities.Mutants DNATable) : IRequest<bool>;
+    public record MutantsRqst(Mutants DNATable) : IRequest<bool>;
+
     public class MutantsCommandHandler : IRequestHandler<MutantsRqst, bool>
     {
         private readonly ILogger<MutantsCommandHandler> _logger;
@@ -31,7 +33,7 @@ namespace ApiMutants.Application.Commands
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error Handle", ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }

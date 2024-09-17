@@ -31,7 +31,7 @@ Te ha contratado a ti para que desarrolles un proyecto que detecte si un humano 
 2. Navega a la carpeta del proyecto:
 
     ```bash
-    cd ApiMutants
+    cd ApiMutants\src\ApiMutants.PresentationLayer
     ```
 
 3. Restaura las dependencias:
@@ -46,7 +46,7 @@ Te ha contratado a ti para que desarrolles un proyecto que detecte si un humano 
     dotnet run
     ```
 
-6. La API estará disponible en `http://localhost:5030` o `https://localhost:7039/` para HTTPS.
+6. La API estará disponible en `http://localhost:5070` o `https://localhost:7039/` para HTTPS.
 
 
 ### Opcional: Ejecutar desde VS Code, instalar pluggin:

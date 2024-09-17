@@ -1,8 +1,7 @@
 ﻿using ApiMutants.Application.Interfaces;
-using ApiMutants.Domain.Config;
 using ApiMutants.Services;
 
-namespace ApiMutants.EndpointsDefinition
+namespace ApiMutants.PresentationLayer.EndpointsDefinition
 {
     public static class AppExtensions
     {
@@ -21,5 +20,4 @@ namespace ApiMutants.EndpointsDefinition
             return services;
         }
     }
-
 }

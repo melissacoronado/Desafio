@@ -1,8 +1,13 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace ApiMutants.Domain.NonEntities
 {
     public class Mutants
     {
-        public List<string> DNA { get; set; }
+        public List<string> DNA { get; set; } = new List<string>();
     }
 }

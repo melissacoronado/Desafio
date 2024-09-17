@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\ApiMutants.Application\ApiMutants.Application.csproj" />
+    <ProjectReference Include="..\src\ApiMutants.Domain\ApiMutants.Domain.csproj" />
     <ProjectReference Include="..\src\ApiMutants.Services\ApiMutants.Services.csproj" />
   </ItemGroup>
 

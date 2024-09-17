@@ -1,4 +1,4 @@
-﻿namespace ApiMutants.Request
+﻿namespace ApiMutants.PresentationLayer.Request
 {
     public record MutantRequest
     (

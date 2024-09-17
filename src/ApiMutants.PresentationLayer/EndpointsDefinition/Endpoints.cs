@@ -1,11 +1,11 @@
 ﻿using ApiMutants.Application.Commands;
 using ApiMutants.Domain.NonEntities;
-using ApiMutants.Request;
+using ApiMutants.PresentationLayer.Request;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiMutants.EndpointsDefinition
+namespace ApiMutants.PresentationLayer.EndpointsDefinition
 {
     public class Endpoints
     {

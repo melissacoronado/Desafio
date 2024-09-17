@@ -1,10 +1,9 @@
-using ApiMutants;
 using ApiMutants.Application.Commands;
 using ApiMutants.Domain.Config;
-using ApiMutants.EndpointsDefinition;
-using ApiMutants.Mediatr;
+using ApiMutants.PresentationLayer;
+using ApiMutants.PresentationLayer.EndpointsDefinition;
+using ApiMutants.PresentationLayer.Mediatr;
 using FluentValidation;
-using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
